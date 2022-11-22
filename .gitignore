@@ -1,0 +1,8 @@
+#Ignorar binarios
+bin/
+obj/
+#Ignorar archivos de visual studio
+*.sln
+.vs/
+TestEjercicio01/
+TestEjercicio02/
