@@ -14,17 +14,17 @@ namespace Ejercicio03_RepositorioUsuarios
         //METHODS
         public void Actualizar(Usuario pUsuario)
         {
-            throw new NotImplementedException();
+            iRepositorio[pUsuario.Codigo] = pUsuario;
         }
 
         public void Agregar(Usuario pUsuario)
         {
-            throw new NotImplementedException();
+            iRepositorio.Add(pUsuario.Codigo, pUsuario);
         }
 
-        public void Eliminar(string pCodgo)
+        public void Eliminar(string pCodigo)
         {
-            throw new NotImplementedException();
+            iRepositorio.Remove(pCodigo);
         }
 
         public IList<Usuario> ObtenerOrdenadosPor(IComparer<Usuario> pComparador)
@@ -34,12 +34,12 @@ namespace Ejercicio03_RepositorioUsuarios
 
         public Usuario ObtenerPorCodigo(string pCodigo)
         {
-            throw new NotImplementedException();
+            return iRepositorio[pCodigo];
         }
 
         public IList<Usuario> ObtenerTodos()
         {
-            throw new NotImplementedException();
+            return iRepositorio.Values.ToList();
         }
     }
 }
