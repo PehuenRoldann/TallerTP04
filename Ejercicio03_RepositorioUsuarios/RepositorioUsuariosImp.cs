@@ -22,6 +22,7 @@ namespace Ejercicio03_RepositorioUsuarios
             iRepositorio.Add(pUsuario.Codigo, pUsuario);
         }
 
+
         public void Eliminar(string pCodigo)
         {
             iRepositorio.Remove(pCodigo);
@@ -29,7 +30,11 @@ namespace Ejercicio03_RepositorioUsuarios
 
         public IList<Usuario> ObtenerOrdenadosPor(IComparer<Usuario> pComparador)
         {
-            throw new NotImplementedException();
+            List<Usuario> lista = iRepositorio.Values.ToList();
+            //Ordenamos usando la implementaíón de IComparer pasada como parámetro.
+            lista.Sort(pComparador);
+            return lista;
+            
         }
 
         public Usuario ObtenerPorCodigo(string pCodigo)
@@ -39,7 +44,9 @@ namespace Ejercicio03_RepositorioUsuarios
 
         public IList<Usuario> ObtenerTodos()
         {
-            return iRepositorio.Values.ToList();
+            List<Usuario> lista = iRepositorio.Values.ToList();
+            lista.Sort();//Ordenamos por código, por defecto.
+            return lista;
         }
     }
 }
